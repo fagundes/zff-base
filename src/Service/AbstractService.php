@@ -428,8 +428,8 @@ abstract class AbstractService
         $currentPageNumber = null,
         $itemCountPerPage
         = null
-    )
-    {
+    ) {
+    
 
         $this->setPagination($currentPageNumber, $itemCountPerPage);
         $query->setFirstResult($this->firstResult)

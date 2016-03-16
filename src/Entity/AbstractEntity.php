@@ -29,5 +29,4 @@ class AbstractEntity
     {
         $this->configure($data);
     }
-
 }

@@ -28,7 +28,7 @@ class File
 
     public static function rmdirRecursive($dir)
     {
-        if(!file_exists($dir)) {
+        if (!file_exists($dir)) {
             return;
         }
 

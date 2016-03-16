@@ -91,5 +91,4 @@ class ConfigurableClass
         $this->z = $z;
         return $this;
     }
-
 }

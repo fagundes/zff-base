@@ -54,7 +54,7 @@ class DoctrineObject extends StdDoctrineHydrator
                     $dateTime->setTimestamp($value);
                     $value = $dateTime;
                 } elseif (is_string($value)) {
-                    $value = $this->getDateFormat() ? 
+                    $value = $this->getDateFormat() ?
                         \DateTime::createFromFormat($this->getDateFormat(), $value) :
                         new DateTime($value);
                 }

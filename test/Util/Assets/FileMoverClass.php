@@ -91,14 +91,15 @@ class FileMoverClass
         $this->moveFile($this->filepathTwo, $this->filepathTwoInfo, 'test/data/upload/otherplace');
     }
 
-    public function removeAllFiles() {
+    public function removeAllFiles()
+    {
         $this->removeFile($this->filepathOne);
         $this->removeFile($this->filepathTwo);
     }
 
-    public function updateAllFiles() {
+    public function updateAllFiles()
+    {
         $this->updateFile($this->filepathOne, $this->filepathOneInfo, 'test/data/upload');
         $this->updateFile($this->filepathTwo, $this->filepathTwoInfo, 'test/data/upload/otherplace');
     }
-
 }

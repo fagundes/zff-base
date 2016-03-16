@@ -34,7 +34,8 @@ class ModuleTest extends TestCase
         $this->assertEquals($configArr, $this->module->getConfig());
     }
 
-    public function testAutoloader() {
+    public function testAutoloader()
+    {
         $this->assertNotEmpty($this->module->getAutoloaderConfig());
     }
 }
