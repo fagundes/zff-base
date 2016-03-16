@@ -23,6 +23,32 @@ class AbstractController extends AbstractActionController
      */
     private $postedData;
 
+    /**
+     * @var array
+     */
+    protected $forms;
+
+    /**
+     * @var array
+     */
+    protected $services;
+
+    /**
+     * @return array list of forms's names
+     */
+    public function getForms()
+    {
+        return $this->forms;
+    }
+
+    /**
+     * @return array list of service's names
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
+
     protected function getPostedData()
     {
         if (is_null($this->postedData)) {

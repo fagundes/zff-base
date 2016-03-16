@@ -82,7 +82,8 @@ return [
         'abstract_factories' => [
             Form\FormAbstractFactory::class,
             Form\InputFilterAbstractFactory::class,
-            Service\ServiceAbstractFactory::class
+            Service\ServiceAbstractFactory::class,
+            Controller\ControllerAbstractFactory::class,
         ],
     ],
 ];
