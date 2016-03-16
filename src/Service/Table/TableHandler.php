@@ -7,12 +7,10 @@
 
 namespace Zff\Base\Service\Table;
 
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\Parameters;
 use ZfTable\AbstractTable;
 
-class TableHandler implements ServiceLocatorAwareInterface
+class TableHandler
 {
 
     /**
@@ -26,28 +24,10 @@ class TableHandler implements ServiceLocatorAwareInterface
     protected $dbAdapter;
 
     /**
-     * @var ServiceLocatorInterface
-     */
-    protected $serviceLocator;
-
-    public function getServiceLocator()
-    {
-        return $this->serviceLocator;
-    }
-
-    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
-    {
-        $this->serviceLocator = $serviceLocator;
-    }
-
-    /**
      * @return \Zend\Db\Adapter\Adapter
      */
     public function getDbAdapter()
     {
-        if (!$this->dbAdapter) {
-            $this->dbAdapter = $this->getServiceLocator()->get('zfdb_adapter');
-        }
         return $this->dbAdapter;
     }
 
@@ -62,10 +42,7 @@ class TableHandler implements ServiceLocatorAwareInterface
      */
     public function getEntityManager()
     {
-        if (!$this->em) {
-            $this->em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
-        }
-        return $this->em;
+        return $this->entityManager;
     }
 
     public function setEntityManager(\Doctrine\ORM\EntityManager $entityManager)

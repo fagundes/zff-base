@@ -47,10 +47,7 @@ class ServiceAbstractFactory implements AbstractFactoryInterface
             
             $dbAdapter = $serviceLocator->get($service->getDbAdapterName());
             $service->setDbAdapter($dbAdapter);
-            /**
-             * @todo lazy load here, table handler recebe o nome default mais
-             * nao instancia os servicos o mesmo com service
-             */
+
             $tableHandler = $serviceLocator->get(Table\TableHandler::class);
             $tableHandler->setEntityManager($entityManager);
             $tableHandler->setDbAdapter($dbAdapter);
@@ -84,7 +81,7 @@ class ServiceAbstractFactory implements AbstractFactoryInterface
         if (!method_exists($service, $methodSet)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    'Espera-se o metodo %s::%s, para carregar o serviço %s.',
+                    'Expected method %s::%s, to set the service %s.',
                     get_class($service),
                     $methodSet,
                     $serviceNeededName
